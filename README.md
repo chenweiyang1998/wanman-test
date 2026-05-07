@@ -1,44 +1,96 @@
-# Wanman Test Project
+# wanmantest
 
-A test project for the wanman multi-agent system.
+> wanman multi-agent system test project
 
-## 项目目的
+## Overview
 
-本项目旨在测试和演示 wanman 多代理协作系统的工作流程，包括：
+wanmantest is a Python project designed to test and validate the wanman multi-agent system capabilities. This project serves as a playground for developing, testing, and benchmarking agent coordination workflows.
 
-- 任务分解与分配
-- 多代理协作开发
-- 代码审查与合并流程
-- 文档同步与维护
+## Features
 
-## 项目结构
+- Multi-agent coordination framework
+- Task management and delegation
+- Agent communication protocols
+- Performance benchmarking tools
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd wanmantest
+
+# Install with development dependencies
+pip install -e ".[dev]"
+
+# Or install just the package
+pip install -e .
+```
+
+## Development Setup
+
+```bash
+# Install development dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run tests with coverage
+pytest --cov=. --cov-report=term-missing
+
+# Lint code
+ruff check .
+
+# Type check
+mypy .
+```
+
+## Project Structure
 
 ```
-.
-├── .editorconfig    # 编辑器配置
-├── .gitignore       # Git 忽略规则
-├── LICENSE          # MIT 许可证
-├── README.md        # 项目说明文档
-├── CHANGELOG.md     # 变更日志
-├── CONTRIBUTING.md  # 贡献指南
-└── docs/            # 文档目录
-    ├── ARCHITECTURE.md  # 架构文档
-    └── SUMMARY.md      # 文档概览
+wanmantest/
+├── .github/           # GitHub configuration (CI/CD workflows)
+├── docs/               # Documentation
+├── tests/              # Test suite
+├── deliverables/       # Project deliverables and artifacts
+├── pyproject.toml      # Project configuration
+├── LICENSE             # MIT License
+└── README.md           # This file
 ```
 
-## 开发流程
+## Testing
 
-1. **任务创建**: 通过 wanman 系统创建任务
-2. **开发执行**: Dev agent 实现功能
-3. **代码审查**: CTO agent 审查 PR
-4. **合并部署**: 通过审查后合并到主分支
+This project uses pytest with the following configuration:
 
-## 状态
+- Async test support via `pytest-asyncio`
+- Coverage reporting via `pytest-cov`
+- Automatic async mode enabled
 
-- 项目元数据文件: ✅ 已完成
-- 文档结构: ✅ 已完成
-- 完整 README: ✅ 已完成
+Run all tests:
+```bash
+pytest
+```
 
-## 许可证
+Run specific test file:
+```bash
+pytest tests/test_example.py
+```
 
-MIT License - 详见 LICENSE 文件
+## Code Quality
+
+We use several tools to maintain code quality:
+
+- **ruff**: Fast Python linter (E, F, I, N, W, UP rules)
+- **mypy**: Static type checker
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+## Contributing
+
+Contributions are welcome! Please ensure:
+- All tests pass before submitting PRs
+- Code follows the project's linting rules
+- New features include appropriate tests
