@@ -54,9 +54,25 @@ wanmantest/
 ├── docs/               # Documentation
 ├── tests/              # Test suite
 ├── deliverables/       # Project deliverables and artifacts
+│   └── spdm-data-management/  # SPDM 可视化原型
 ├── pyproject.toml      # Project configuration
 ├── LICENSE             # MIT License
 └── README.md           # This file
+```
+
+## SPDM Prototype
+
+SPDM（Simulation Process & Data Management，仿真过程与数据管理）原型展示了仿真数据的生命周期可视化：
+
+- **交互式数据流图**：使用 p5.js 绘制，包含 BOM、仿真任务、工况、报告等数据节点
+- **动画效果**：数据节点和连接线动态展示仿真数据结构
+- **设计哲学**："数据流动生命体"的可视化理念
+
+访问方式：
+```bash
+cd deliverables/spdm-data-management
+python -m http.server 8080
+# 然后访问 http://localhost:8080
 ```
 
 ## Testing
