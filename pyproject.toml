@@ -9,9 +9,15 @@ authors = [
     {name = "wanman contributors"}
 ]
 
+dependencies = [
+    "sqlalchemy>=2.0",
+    "pydantic>=2.0",
+    "fastapi>=0.100",
+]
+
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["wanmantest*"]
+include = ["wanmantest*", "spdm*"]
 exclude = ["tests*", "deliverables*", "docs*"]
 
 [project.optional-dependencies]
@@ -31,7 +37,7 @@ asyncio_mode = "auto"
 addopts = "-v --cov=. --cov-report=term-missing"
 
 [tool.coverage.run]
-source = ["wanmantest"]
+source = ["wanmantest", "spdm"]
 omit = [".venv/*", "tests/*", ".git/*"]
 
 [tool.coverage.report]
